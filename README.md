@@ -8,9 +8,9 @@ Download the `01-network-manager-all.yaml` file for each machine, and replace th
 Ultimately forming a linear topology from `hostA` to `hostD`  
 ## Usage  
 Here is a small example provided to understand how to use it. The service at host B will reverse the case of the first five English letters of the TCP packets passing through.  
-1.Set up SRV6 forwarding  
+1) Set up SRV6 forwarding  
 Run the `route.sh` file prepared for each host.  
-2.Enable the Reverse Letter Service  
+2) Enable the Reverse Letter Service  
 Use the `make` command in `hostB` to compile the prepared code, run it with `sudo insmod reverse_letter.ko`, and finally stop the service using `sudo rmmod reverse_letter`.  
-3.Sending Message  
+3) Sending Message  
 Sending some messages from `hostA` to `hostD`.
