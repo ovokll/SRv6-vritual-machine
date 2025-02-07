@@ -1,3 +1,3 @@
 # SRv6-vritual-machine
-Download Machine
-https://pan.baidu.com/s/14-slbUZkwORLGymKFIZ04g?pwd=5ryi 
+# Download Machine
+You can download the .ova file at this link: https://pan.baidu.com/s/14-slbUZkwORLGymKFIZ04g?pwd=5ryi 
