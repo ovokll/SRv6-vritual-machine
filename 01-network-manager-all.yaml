@@ -1,0 +1,22 @@
+# Let NetworkManager manage all devices on this system
+network:
+  version: 2
+#  renderer: NetworkManager
+  ethernets:
+    eth0:
+      dhcp6: false
+      addresses:
+      - 2024:cd::2/64
+      routes:
+      - to: fc00:1::/64
+        via: 2024:cd::1
+      - to: fc00:2::/64
+        via: 2024:cd::1
+      - to: fc00:3::/64
+        via: 2024:cd::1
+      - to: fc00:5::/64
+        via: 2024:cd::1
+      - to: 2024::/16
+        via: 2024:cd::1
+    eth1:
+      dhcp4: true
