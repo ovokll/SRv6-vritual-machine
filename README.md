@@ -13,4 +13,5 @@ Run the `route.sh` file prepared for each host.
 2) Enable the Reverse Letter Service  
 Use the `make` command in `hostB` to compile the prepared code, run it with `sudo insmod reverse_letter.ko`, and finally stop the service using `sudo rmmod reverse_letter`.  
 3) Sending Message  
-Sending some messages from `hostA` to `hostD`. You can see that the capitalization of the first few letters has been reversed。
+Sending some messages from `hostA` to `hostD`. You can see that the capitalization of the first few letters has been reversed.
+
