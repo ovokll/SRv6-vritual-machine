@@ -49,8 +49,7 @@ struct ipv6len_ipip{
 int check_ipv6_function(struct ipv6hdr *ip6h){
     struct net_device *dev = dev_get_by_name(&init_net, "eth1");
     struct in6_addr daddr = ip6h->daddr;
-    if(daddr.in6_u.u6_addr8[15] == 0xa0 || daddr.in6_u.u6_addr8[15] == 0xa2)
-    //if(daddr.in6_u.u6_addr8[15] == 0x02)
+    if(daddr.in6_u.u6_addr8[15] == 0x0a)
         return 1;
     return 0;
 }
