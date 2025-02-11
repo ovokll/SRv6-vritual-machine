@@ -1,7 +1,7 @@
 
 ## Language/语言
 
-- [English](#english)
+- [English]
 - [中文](#中文)
 
 ### English
