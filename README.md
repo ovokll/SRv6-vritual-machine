@@ -32,7 +32,7 @@ Sending some messages from `hostA` to `hostD`. You can see that the order of the
 1）下载虚拟机文件  
 您可以通过以下链接下载`.ova`文件：`https://pan.baidu.com/s/14-slbUZkwORLGymKFIZ04g?pwd=5ryi`. 然后在VMware中多次导入该文件，并将其作为`Host A`到`Host E`。用户名和密码均为`kll`。   
 2）修改网卡配置  
-启动虚拟机前首先进行网卡配置，顺序与3）中的yaml对应，请勿随意修改  
+启动虚拟机前首先进行网卡配置，顺序与3）中的yaml文件对应，请勿随意修改  
 - Host A配置2个网卡，分别为：LAN区段（ab）、NET  
 - Host B配置4个网卡，分别为：LAN区段（ab）、LAN区段（bc）、LAN区段（be）、NET  
 - Host C配置4个网卡，分别为：LAN区段（bc）、LAN区段（cd）、LAN区段（ec）、NET  
