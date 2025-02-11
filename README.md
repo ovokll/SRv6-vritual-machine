@@ -49,13 +49,20 @@ Sending some messages from `hostA` to `hostD`. You can see that the order of the
 在`Host A`处运行
 ```bash
 sudo ip -6 route add 2024:cd::2/128 encap seg6 mode encap segs fc00:2::a0,fc00:5::a0,fc00:3::a0 dev eth0
-
+```
 在`hostB`处运行
-xxxx
+```bash
+sudo ip -6 route add fc00:2::a/64 encap seg6local action End dev eth1 metric 200
+sudo ip -6 route add fc00:2::a/64 encap seg6local action End dev eth2 metric 300
+```
 在`hostE`处运行
-xxxx
+```bash
+sudo ip -6 route add fc00:5::a0/64 encap seg6local action End dev eth1 metric 200
+```
 在`hostC`处运行
-xxxx（卸载SRH部分）
+```bash
+sudo ip -6 route add fc00:3::a0/64 encap seg6local action End.DX6 nh6 2024:cd::2 dev eth1
+```
 2）发送消息  
 在`hostD`中使用server.c来接收信息  
 在`hostA`中使用client.c来发送消息  
