@@ -67,19 +67,19 @@ Use client.c in `Host A` to send messages.
 Running Wireshark at `Host C` shows that packets are sent from `Host E` to `Host C` and there is an additional Source Routring Header (Wireshark captures the network card as eth2).  
 <img width="555" alt="image" src="https://github.com/user-attachments/assets/452154e8-573e-447f-b1c4-aad268a18628" />
 
-### 3、添加SRv6服务  
-1）在`Host B`中提供了一个简单的功能服务，可以将发送的TCP数据包前5位向左循环移动一次。  
-使用方法如下。  
-复制left_shift_data文件夹到`Host B`中，在文件夹中使用`make`命令编译准备好的代码，  
-在该文件夹下，使用如下命令启动该服务  
+### 3. Add SRv6 Service  
+1) A simple network service is provided in `Host B`, which can cyclically shift the first 5 bits of the sent TCP packet to the left once.  
+The usage method is as follows.  
+Copy the left_sthift_data folder to `Host B` and use the `make` command to compile the prepared code in the folder.  
+Under this folder, use the following command to start the service
 ```bash
 sudo insmod left_shift_data.ko
 ```
-最后使用如下命令停止服务  
+Finally, use the following command to stop the service   
 ```bash
 sudo rmmod left_shift_data
 ```
-2）参考2中步骤配置SRv6相关动作  
+2） Refer to [2](#2) for seting up ip tables  
 3）发送消息  
 在`hostD`中使用server.c来接收信息  
 在`hostA`中使用client.c来发送消息  
