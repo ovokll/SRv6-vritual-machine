@@ -33,11 +33,11 @@ Sending some messages from `hostA` to `hostD`. You can see that the order of the
 您可以通过以下链接下载`.ova`文件：`https://pan.baidu.com/s/14-slbUZkwORLGymKFIZ04g?pwd=5ryi`. 然后在VMware中多次导入该文件，并将其作为`Host A`到`Host E`。用户名和密码均为`kll`。   
 2）修改网卡配置  
 启动虚拟机前首先进行网卡配置，顺序与3）中的yaml对应，请勿随意修改  
-Host A配置2个网卡，分别为：LAN区段（ab）、NET  
-Host B配置4个网卡，分别为：LAN区段（ab）、LAN区段（bc）、LAN区段（be）、NET  
-Host C配置4个网卡，分别为：LAN区段（bc）、LAN区段（cd）、LAN区段（ec）、NET  
-Host D配置2个网卡，分别为：LAN区段（cd）、NET  
-Host E配置3个网卡，分别为：LAN区段（be）、LAN区段（ec）、NET  
+- Host A配置2个网卡，分别为：LAN区段（ab）、NET  
+- Host B配置4个网卡，分别为：LAN区段（ab）、LAN区段（bc）、LAN区段（be）、NET  
+- Host C配置4个网卡，分别为：LAN区段（bc）、LAN区段（cd）、LAN区段（ec）、NET  
+- Host D配置2个网卡，分别为：LAN区段（cd）、NET  
+- Host E配置3个网卡，分别为：LAN区段（be）、LAN区段（ec）、NET  
 3）配置网络地址及静态路由  
 为每台机器下载`01-networkmanager-all.yaml`文件，并替换`/etc/netplan`文件夹中的文件。然后在命令行中输入`sudo netplan apply`以启用该设置。  
 最终形成从`Host A`到`Host E`的拓扑，如下图所示  
