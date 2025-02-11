@@ -1,4 +1,4 @@
-# Project construction in progress/在建工程
+<img width="510" alt="image" src="https://github.com/user-attachments/assets/3fceeb29-accb-4f07-8d6e-fce3f917a2b9" /># Project construction in progress/在建工程
 
 ## Language/语言
 
@@ -45,8 +45,9 @@ TODO: 修改LAN区段
 1）发送消息
 在`Host D`中使用server.c来接收信息
 在`Host A`中使用client.c来发送消息
-在`Host C`处运行wireshark可以看到数据包从`Host B`处直接发往`Host C`
-（（实验结果图））
+在`Host C`处运行wireshark可以看到数据包从`Host B`处直接发往`Host C`（wireshark捕获网卡为eth0）
+<img width="317" alt="image" src="https://github.com/user-attachments/assets/661c14eb-cb01-4cc0-ad68-92629b301680" />
+<img width="510" alt="image" src="https://github.com/user-attachments/assets/b9601e8a-60a5-4883-b0fd-11701e959645" />
 
 2、启用SRv6
 1）设置SRV6相关动作  
@@ -71,7 +72,6 @@ sudo ip -6 route add fc00:3::a0/64 encap seg6local action End.DX6 nh6 2024:cd::2
 在`Host D`中使用server.c来接收信息  
 在`Host A`中使用client.c来发送消息  
 在`Host C`处运行wireshark可以看到数据包是从`Host E`处发往`Host C`，并且有一个额外的SRH  
-（（实验结果图））
 
 3、添加SRv6服务  
 1）在`Host B`中提供了一个简单的功能服务，可以将发送的TCP数据包前5位向左循环移动一次。  
