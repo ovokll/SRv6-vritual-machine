@@ -1,3 +1,9 @@
+## Language
+
+- [English](#english)
+- [中文](#中文)
+
+### English
 # SRv6-vritual-machine
 This project is a SRv6 Sandbox.
 ## Install Guide
@@ -15,3 +21,5 @@ Use the `make` command in `hostB` to compile the prepared code, run it with `sud
 3) Sending Message  
 Sending some messages from `hostA` to `hostD`. You can see that the capitalization of the first few letters has been reversed.
 
+
+### 中文
