@@ -90,5 +90,5 @@ sudo rmmod left_shift_data
 在`hostD`中使用server.c来接收信息  
 在`hostA`中使用client.c来发送消息  
 在`hostC`处运行wireshark可以看到数据包是从`Host E`处发往`Host C`，并且有一个额外的SRH，同时数据部分已经向左循环位移了一次。  
-<img width="379" alt="image" src="https://github.com/user-attachments/assets/14cf7edd-05cf-445c-9a41-9f78f535af54" />
-<img width="550" alt="image" src="https://github.com/user-attachments/assets/1e0be680-b13b-4438-bf9a-2813da9c7688" />
+<img width="450" alt="image" src="https://github.com/user-attachments/assets/14cf7edd-05cf-445c-9a41-9f78f535af54" />
+<img width="450" alt="image" src="https://github.com/user-attachments/assets/1e0be680-b13b-4438-bf9a-2813da9c7688" />
