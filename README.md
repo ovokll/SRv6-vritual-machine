@@ -47,7 +47,7 @@ Sending some messages from `hostA` to `hostD`. You can see that the order of the
 ## 使用方法  
 这里提供了几个示例来了解并使用SRv6。  
 
-1、未启用SRv6  
+# 1、未启用SRv6  
 1）发送消息  
 在`Host D`中使用server.c来接收信息  
 在`Host A`中使用client.c来发送消息  
@@ -55,7 +55,7 @@ Sending some messages from `hostA` to `hostD`. You can see that the order of the
 <img width="400" alt="image" src="https://github.com/user-attachments/assets/661c14eb-cb01-4cc0-ad68-92629b301680" />
 <img width="400" alt="image" src="https://github.com/user-attachments/assets/b9601e8a-60a5-4883-b0fd-11701e959645" />
 
-2、启用SRv6
+# 2、启用SRv6  
 1）设置SRV6相关动作  
 在`Host A`处运行
 ```bash
