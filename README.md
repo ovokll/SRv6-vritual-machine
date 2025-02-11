@@ -79,7 +79,7 @@ Finally, use the following command to stop the service
 ```bash
 sudo rmmod left_shift_data
 ```
-2） Refer to [2](#Enable) for seting up ip tables  
+2） Refer to [2](#2-Enable-SRv6) for seting up ip tables  
 3）发送消息  
 在`hostD`中使用server.c来接收信息  
 在`hostA`中使用client.c来发送消息  
