@@ -37,7 +37,8 @@ Sending some messages from `hostA` to `hostD`. You can see that the order of the
 - Host B配置4个网卡，分别为：LAN区段（ab）、LAN区段（bc）、LAN区段（be）、NET  
 - Host C配置4个网卡，分别为：LAN区段（bc）、LAN区段（cd）、LAN区段（ec）、NET  
 - Host D配置2个网卡，分别为：LAN区段（cd）、NET  
-- Host E配置3个网卡，分别为：LAN区段（be）、LAN区段（ec）、NET  
+- Host E配置3个网卡，分别为：LAN区段（be）、LAN区段（ec）、NET
+
 3）配置网络地址及静态路由  
 为每台机器下载`01-networkmanager-all.yaml`文件，并替换`/etc/netplan`文件夹中的文件。然后在命令行中输入`sudo netplan apply`以启用该设置。  
 最终形成从`Host A`到`Host E`的拓扑，如下图所示  
