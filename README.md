@@ -29,7 +29,7 @@ Sending some messages from `hostA` to `hostD`. You can see that the order of the
 该项目是一个SRv6沙盒。  
 ## 安装指南  
 1）下载虚拟机文件  
-您可以通过以下链接下载`.ova`文件：`https://pan.baidu.com/s/14-slbUZkwORLGymKFIZ04g?pwd=5ryi`. 然后多次导入该文件，并将其重命名为hosta到hostd。  
+您可以通过以下链接下载`.ova`文件：`https://pan.baidu.com/s/14-slbUZkwORLGymKFIZ04g?pwd=5ryi`. 然后多次导入该文件，并将其作为`Host A`到`Host E`。  
 2）构建网络拓扑  
 为每台机器下载`01-networkmanager-all.yaml`文件，并替换`/etc/netplan`文件夹中的文件。然后在命令行中输入`sudo netplan apply`以启用该设置。  
 最终形成从`Host A`到`Host E`的拓扑，如下图所示  
@@ -50,29 +50,29 @@ Sending some messages from `hostA` to `hostD`. You can see that the order of the
 ```bash
 sudo ip -6 route add 2024:cd::2/128 encap seg6 mode encap segs fc00:2::a0,fc00:5::a0,fc00:3::a0 dev eth0
 ```
-在`hostB`处运行
+在`host B`处运行
 ```bash
 sudo ip -6 route add fc00:2::a/64 encap seg6local action End dev eth1 metric 200
 sudo ip -6 route add fc00:2::a/64 encap seg6local action End dev eth2 metric 300
 ```
-在`hostE`处运行
+在`host E`处运行
 ```bash
 sudo ip -6 route add fc00:5::a0/64 encap seg6local action End dev eth1 metric 200
 ```
-在`hostC`处运行
+在`host C`处运行
 ```bash
 sudo ip -6 route add fc00:3::a0/64 encap seg6local action End.DX6 nh6 2024:cd::2 dev eth1
 ```
 2）发送消息  
-在`hostD`中使用server.c来接收信息  
-在`hostA`中使用client.c来发送消息  
-在`hostC`处运行wireshark可以看到数据包是从`hostE`处发往`hostC`，并且有一个额外的SRH  
+在`Host D`中使用server.c来接收信息  
+在`Host A`中使用client.c来发送消息  
+在`Host C`处运行wireshark可以看到数据包是从`Host E`处发往`Host C`，并且有一个额外的SRH  
 
 3、添加SRv6服务  
-1）在`hostB`中提供了一个简单的功能服务，可以将发送的TCP数据包前5位向左循环移动一次。  
+1）在`Host B`中提供了一个简单的功能服务，可以将发送的TCP数据包前5位向左循环移动一次。  
 使用方法如下。  
-复制left_shift_data文件夹到`hostB`中，在文件夹中使用`make`命令编译准备好的代码，  
-使用如下命令启动该服务  
+复制left_shift_data文件夹到`Host B`中，在文件夹中使用`make`命令编译准备好的代码，  
+在该文件夹下，使用如下命令启动该服务  
 ```bash
 sudo insmod left_shift_data.ko
 ```
@@ -84,4 +84,4 @@ sudo rmmod left_shift_data
 3）发送消息  
 在`hostD`中使用server.c来接收信息  
 在`hostA`中使用client.c来发送消息  
-在`hostC`处运行wireshark可以看到数据包是从`hostE`处发往`hostC`，并且有一个额外的SRH，同时数据部分已经向左循环位移了一次。
+在`hostC`处运行wireshark可以看到数据包是从`Host E`处发往`Host C`，并且有一个额外的SRH，同时数据部分已经向左循环位移了一次。
