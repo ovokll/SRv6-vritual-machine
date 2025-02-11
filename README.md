@@ -31,7 +31,7 @@ Sending some messages from `hostA` to `hostD`. You can see that the order of the
 该项目是一个SRv6沙盒。  
 ## 安装指南  
 1）下载虚拟机文件  
-您可以通过以下链接下载`.ova`文件：`https://pan.baidu.com/s/14-slbUZkwORLGymKFIZ04g?pwd=5ryi`. 然后多次导入该文件，并将其作为`Host A`到`Host E`。  
+您可以通过以下链接下载`.ova`文件：`https://pan.baidu.com/s/14-slbUZkwORLGymKFIZ04g?pwd=5ryi`. 然后多次导入该文件，并将其作为`Host A`到`Host E`。用户名和密码均为`kll`。    
 2）构建网络拓扑  
 为每台机器下载`01-networkmanager-all.yaml`文件，并替换`/etc/netplan`文件夹中的文件。然后在命令行中输入`sudo netplan apply`以启用该设置。  
 最终形成从`Host A`到`Host E`的拓扑，如下图所示  
