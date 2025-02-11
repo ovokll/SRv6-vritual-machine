@@ -66,19 +66,22 @@ sudo ip -6 route add fc00:3::a0/64 encap seg6local action End.DX6 nh6 2024:cd::2
 2）发送消息  
 在`hostD`中使用server.c来接收信息  
 在`hostA`中使用client.c来发送消息  
-在`hostC`处运行wireshark可以看到数据包是从`hostE`处发往`hostC`，并且有一个额外的SRH
+在`hostC`处运行wireshark可以看到数据包是从`hostE`处发往`hostC`，并且有一个额外的SRH  
 
 3、添加SRv6服务  
-1）在`hostB`中提供了一个简单的功能服务，可以将发送的TCP数据包前5位向左循环移动一次。
-使用方法如下。
-复制left_shift_data文件夹到`hostB`中，在文件夹中使用`make`命令编译准备好的代码，
-使用如下命令启动该服务
-`sudo insmod left_shift_data.ko`
-最后使用如下命令停止服务
-`sudo rmmod left_shift_data`
-2）参考2中步骤配置SRv6相关动作
-3）发送消息
+1）在`hostB`中提供了一个简单的功能服务，可以将发送的TCP数据包前5位向左循环移动一次。  
+使用方法如下。  
+复制left_shift_data文件夹到`hostB`中，在文件夹中使用`make`命令编译准备好的代码，  
+使用如下命令启动该服务  
+```bash
+sudo insmod left_shift_data.ko
+```
+最后使用如下命令停止服务  
+```bash
+sudo rmmod left_shift_data
+```
+2）参考2中步骤配置SRv6相关动作  
+3）发送消息  
 在`hostD`中使用server.c来接收信息  
 在`hostA`中使用client.c来发送消息  
-在`hostC`处运行wireshark可以看到数据包是从`hostE`处发往`hostC`，并且有一个额外的SRH，同时数据部分已经向
-
+在`hostC`处运行wireshark可以看到数据包是从`hostE`处发往`hostC`，并且有一个额外的SRH，同时数据部分已经向左循环位移了一次。
