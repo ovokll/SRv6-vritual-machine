@@ -13,7 +13,7 @@ You can download the `.ova` file at this link: `https://pan.baidu.com/s/14-slbUZ
 Download the `01-network-manager-all.yaml` file for each machine, and replace the file at `/etc/netplan` folder. Then enter `sudo netplan apply` in the command line to enable the setting.  
 Ultimately forming a linear topology from `hostA` to `hostD`  
 ## Usage  
-Here is a small example provided to understand how to use it. The hostB service will cyclically left shift the first five English letters of the data packet.
+Here is a small example provided to understand how to use it. The hostB service will cyclically left shift the first five English letters of the data packet.  
 1) Set up SRV6 forwarding  
 Run the `route.sh` file prepared for each host.  
 2) Enable the Left Shift Service  
