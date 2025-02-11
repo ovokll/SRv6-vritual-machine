@@ -11,7 +11,7 @@ This project is a SRv6 Sandbox.
 You can download the `.ova` file at this link: `https://pan.baidu.com/s/14-slbUZkwORLGymKFIZ04g?pwd=5ryi`. Then import the file multiple times and rename it as hosta to hostd.  
 2) Building Network Topology  
 Download the `01-network-manager-all.yaml` file for each machine, and replace the file at `/etc/netplan` folder. Then enter `sudo netplan apply` in the command line to enable the setting.  
-Ultimately forming a linear topology from `hostA` to `hostD`
+Ultimately forming a linear topology from `hostA` to `hostD`  
 <img width="772" alt="image" src="https://github.com/user-attachments/assets/fe1949e1-3d30-40d4-a583-48cb3258e73a" />
 
 ## Usage  
@@ -25,19 +25,51 @@ Sending some messages from `hostA` to `hostD`. You can see that the order of the
 
 
 ### 中文  
-# SRv6虚拟机
+# SRv6虚拟机  
 该项目是一个SRv6沙盒。  
-## 安装指南
+## 安装指南  
 1）下载虚拟机文件  
 您可以通过以下链接下载`.ova`文件：`https://pan.baidu.com/s/14-slbUZkwORLGymKFIZ04g?pwd=5ryi`. 然后多次导入该文件，并将其重命名为hosta到hostd。  
 2）构建网络拓扑  
 为每台机器下载`01-networkmanager-all.yaml`文件，并替换`/etc/netplan`文件夹中的文件。然后在命令行中输入`sudo netplan apply`以启用该设置。  
-最终形成从`hostA`到`hostD`的线性拓扑  
+最终形成从`Host A`到`Host E`的拓扑，如下图所示  
+<img width="772" alt="image" src="https://github.com/user-attachments/assets/fe1949e1-3d30-40d4-a583-48cb3258e73a" />
+
 ## 使用方法  
-这里提供了一个示例来了解如何使用它。hostB中的服务会将指定目的地址的TCP数据包前5位循环左移一次。  
-1）设置SRV6转发动作  
-运行为每个主机准备的`route.sh`文件。  
-2）启用左移服务  
-使用`hostB`中的`make`命令编译准备好的代码，使用`sudo insmod left_shift_data.ko`运行它，最后使用`sudo rmmod left_shift_data`停止服务。  
-3）发送消息  
-从`hostA`向`hostD`发送一些消息。你可以看到前几个字符顺序发生了改变。  
+这里提供了几个示例来了解并使用SRv6。  
+
+1、未启用SRv6
+1）发送消息
+在`Host D`中使用server.c来接收信息
+在`Host A`中使用client.c来发送消息
+在`Host C`处运行wireshark可以看到数据包从`Host B`处直接发往`Host C`
+
+2、启用SRv6
+1）设置SRV6相关动作  
+在`Host A`处运行
+xxxx（添加srh并将数据包绕路到`hostE`）
+在`hostB`处运行
+xxxx
+在`hostE`处运行
+xxxx
+在`hostC`处运行
+xxxx（卸载SRH部分）
+2）发送消息  
+在`hostD`中使用server.c来接收信息  
+在`hostA`中使用client.c来发送消息  
+在`hostC`处运行wireshark可以看到数据包是从`hostE`处发往`hostC`，并且有一个额外的SRH
+
+3、添加SRv6服务  
+1）在`hostB`中提供了一个简单的功能服务，可以将发送的TCP数据包前5位向左循环移动一次。
+使用方法如下。
+复制left_shift_data文件夹到`hostB`中，在文件夹中使用`make`命令编译准备好的代码，
+使用如下命令启动该服务
+`sudo insmod left_shift_data.ko`
+最后使用如下命令停止服务
+`sudo rmmod left_shift_data`
+2）参考2中步骤配置SRv6相关动作
+3）发送消息
+在`hostD`中使用server.c来接收信息  
+在`hostA`中使用client.c来发送消息  
+在`hostC`处运行wireshark可以看到数据包是从`hostE`处发往`hostC`，并且有一个额外的SRH，同时数据部分已经向
+
