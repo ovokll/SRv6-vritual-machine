@@ -47,7 +47,9 @@ Sending some messages from `hostA` to `hostD`. You can see that the order of the
 2、启用SRv6
 1）设置SRV6相关动作  
 在`Host A`处运行
-xxxx（添加srh并将数据包绕路到`hostE`）
+```bash
+sudo ip -6 route add 2024:cd::2/128 encap seg6 mode encap segs fc00:2::a0,fc00:5::a0,fc00:3::a0 dev eth0
+
 在`hostB`处运行
 xxxx
 在`hostE`处运行
