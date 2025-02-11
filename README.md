@@ -1,4 +1,3 @@
-<img width="510" alt="image" src="https://github.com/user-attachments/assets/3fceeb29-accb-4f07-8d6e-fce3f917a2b9" /># Project construction in progress/在建工程
 
 ## Language/语言
 
@@ -46,8 +45,8 @@ TODO: 修改LAN区段
 在`Host D`中使用server.c来接收信息  
 在`Host A`中使用client.c来发送消息  
 在`Host C`处运行wireshark可以看到数据包从`Host B`处直接发往`Host C`（wireshark捕获网卡为eth0）  
-<img width="510" alt="image" src="https://github.com/user-attachments/assets/661c14eb-cb01-4cc0-ad68-92629b301680" />
-<img width="510" alt="image" src="https://github.com/user-attachments/assets/b9601e8a-60a5-4883-b0fd-11701e959645" />
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/661c14eb-cb01-4cc0-ad68-92629b301680" />
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/b9601e8a-60a5-4883-b0fd-11701e959645" />
 
 2、启用SRv6
 1）设置SRV6相关动作  
