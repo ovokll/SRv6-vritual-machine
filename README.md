@@ -15,10 +15,10 @@ You can download the `.ova` file at this link: `https://pan.baidu.com/s/14-slbUZ
 2) Modify Network Adapter Configuration  
 Before starting the virtual machine, You should configure the network adapter in the order corresponding to the `yaml` file in 3). Do not modify separately.  
 - Host A is configured with two network adapter: LAN segment (ab) and NET  
-- Host B is configured with four network adapter: namely LAN segment (ab), LAN segment (bc), LAN segment (be), and NET  
-- Host C is configured with four network adapter: namely LAN segment (bc), LAN segment (cd), LAN segment (ec), and NET  
-- Host D is configured with two network adapter: namely LAN segment (cd) and NET  
-- Host E is configured with three network adapter: namely LAN segment (be), LAN segment (ec), and NET  
+- Host B is configured with four network adapter: LAN segment (ab), LAN segment (bc), LAN segment (be), and NET  
+- Host C is configured with four network adapter: LAN segment (bc), LAN segment (cd), LAN segment (ec), and NET  
+- Host D is configured with two network adapter: LAN segment (cd) and NET  
+- Host E is configured with three network adapter: LAN segment (be), LAN segment (ec), and NET  
 
 3) Configure Network Address and Static Routing Table  
 Download the `01-networkmanager-all.ymal` file for each machine and replace the files in the `/etc/netplan` folder. Then use the following sentence in the command line to enable the setting.
