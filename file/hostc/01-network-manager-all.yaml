@@ -27,8 +27,6 @@ network:
       routes:
       - to: fc00:5::/64
         via: 2024:ec::1
-#      - to: fc00:2::/64
-#        via: 2024:ec::1
       - to: 2024:ab::/64
         via: 2024:ec::1
         metric: 300
