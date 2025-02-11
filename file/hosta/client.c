@@ -34,7 +34,7 @@ int main() {
    
    // 发送数据给服务器
    int i = 1;
-   for(; i <= tr*second*10; i++){
+   for(; i <= 10; i++){
       send(sock , data[0] , strlen(data[0]) , 0 );
       printf("send: %s\n", data[0]);
       usleep(100000);//100ms
