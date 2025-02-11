@@ -64,7 +64,7 @@ sudo ip -6 route add fc00:3::a0/64 encap seg6local action End.DX6 nh6 2024:cd::2
 2) Send Message  
 Use server.c in `Host D` to receive information.  
 Use client.c in `Host A` to send messages.  
-Running Wireshark at `Host C` shows that packets are sent from `Host E` to `Host C` and there is an additional Source Routring Header (Wireshark captures the network card as eth2).  
+Running Wireshark at `Host C` shows that packets are sent from `Host E` to `Host C`(Wireshark captures the network card as eth2) and there is an additional Source Routring Header.  
 <img width="555" alt="image" src="https://github.com/user-attachments/assets/452154e8-573e-447f-b1c4-aad268a18628" />
 
 ### 3. Add SRv6 Service  
@@ -79,11 +79,11 @@ Finally, use the following command to stop the service
 ```bash
 sudo rmmod left_shift_data
 ```
-2） Refer to [2](#2-Enable-SRv6) for seting up ip tables  
-3）发送消息  
-在`hostD`中使用server.c来接收信息  
-在`hostA`中使用client.c来发送消息  
-在`hostC`处运行wireshark可以看到数据包是从`Host E`处发往`Host C`，并且有一个额外的SRH，同时数据部分已经向左循环位移了一次。  
+2） Refer to [Enable SRv6](#2-Enable-SRv6) for seting up ip tables  
+3) Send Message  
+Use server.c in `Host D` to receive information.  
+Use client.c in `Host A` to send messages.  
+Running Wireshark at `Host C` shows that packets are sent from `Host E` to `Host C`(Wireshark captures the network card as eth2) and there is an additional Source Routring Header. At the same time, the data has been cyclically shifted to the left once.    
 <img width="450" alt="image" src="https://github.com/user-attachments/assets/14cf7edd-05cf-445c-9a41-9f78f535af54" />
 <img width="450" alt="image" src="https://github.com/user-attachments/assets/1e0be680-b13b-4438-bf9a-2813da9c7688" />
 
