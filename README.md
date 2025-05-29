@@ -93,7 +93,9 @@ Running Wireshark at `Host C` shows that packets are sent from `Host E` to `Host
 <br >
 ### 中文  
 # SRv6虚拟机  
-该项目是一个SRv6沙盒。  
+该项目是一个SRv6沙盒。 
+如有问题请联系：renbangbang11@nudt.edu.cn
+
 ## 安装指南  
 1）下载虚拟机文件  
 您可以通过以下链接下载`.ova`文件：`https://pan.baidu.com/s/14-slbUZkwORLGymKFIZ04g?pwd=5ryi`. 然后在VMware中多次导入该文件，并将其作为`Host A`到`Host E`。用户名和密码均为`kll`。   
@@ -112,7 +114,6 @@ Running Wireshark at `Host C` shows that packets are sent from `Host E` to `Host
 
 ## 使用方法  
 这里提供了几个示例来了解并使用SRv6。  
-如有问题请联系：renbangbang11@nudt.edu.cn
 
 ### 1、未启用SRv6  
 1）发送消息  
