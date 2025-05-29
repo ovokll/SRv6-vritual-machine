@@ -93,7 +93,7 @@ Running Wireshark at `Host C` shows that packets are sent from `Host E` to `Host
 <br >
 ### 中文  
 # SRv6虚拟机  
-该项目是一个SRv6沙盒。 
+该项目是一个SRv6沙盒。   
 如有问题请联系：renbangbang11@nudt.edu.cn
 
 ## 安装指南  
