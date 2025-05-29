@@ -112,6 +112,7 @@ Running Wireshark at `Host C` shows that packets are sent from `Host E` to `Host
 
 ## 使用方法  
 这里提供了几个示例来了解并使用SRv6。  
+如有问题请联系：renbangbang11@nudt.edu.cn
 
 ### 1、未启用SRv6  
 1）发送消息  
